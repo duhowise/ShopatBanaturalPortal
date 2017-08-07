@@ -68,7 +68,7 @@ namespace ShopatBanaturalPortal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(string Type, [Bind(Include = "ID,ItemName,QuantityLeft,Type,GeneralDescription")] InventoryItem inventoryItem)
+        public ActionResult Create(string Type, [Bind(Include = "ID,ItemName,Price,QuantityLeft,Type,GeneralDescription")] InventoryItem inventoryItem)
         {
             if (ModelState.IsValid)
             {
@@ -148,7 +148,7 @@ namespace ShopatBanaturalPortal.Controllers
                 ItemModel.LastShipmentRecieved = DateTime.Now.ToShortDateString();
                 ItemModel.QuantityLeft = ItemModel.QuantityLeft + Convert.ToInt32(Restock);
                 //split by **
-                ItemModel.ShipmentHistory = ItemModel.ShipmentHistory + "Restocked: " + Restock + " " + ItemModel.ItemName + ". Restocked on: " + DateTime.Now.ToShortDateString() + "*";
+                ItemModel.ShipmentHistory = ItemModel.ShipmentHistory + "[Restocked] " + Restock + " " + ItemModel.ItemName + ". [Restocked on] " + DateTime.Now.ToShortDateString() + "*";
 
 
                 db.Entry(ItemModel).State = EntityState.Modified;
@@ -189,7 +189,7 @@ namespace ShopatBanaturalPortal.Controllers
             {
                 ItemModel.QuantityLeft = ItemModel.QuantityLeft - Convert.ToInt32(Sold);
                 //split by **
-                ItemModel.TransactionHistory = ItemModel.TransactionHistory + "Sold: " + Sold + " " + ItemModel.ItemName + ". Date: " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLocalTime() + "*";
+                ItemModel.TransactionHistory = ItemModel.TransactionHistory + "[Sold] " + Sold + " " + ItemModel.ItemName + ". [Date] " + DateTime.Now.ToLocalTime() + ". [Revenue] " + (Convert.ToInt32(Sold) * ItemModel.Price) + " $" + "*";
                 db.Entry(ItemModel).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

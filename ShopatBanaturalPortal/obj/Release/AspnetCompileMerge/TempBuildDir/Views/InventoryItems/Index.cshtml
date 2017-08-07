@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ShopatBanaturalPortal.Models.InventoryItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Inventory Manifest</h2>
+
+<p>
+    @Html.ActionLink("New Inventory Item", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            #
+        </th>
+        <th>
+            Quantity Left
+        </th>
+        <th>
+            Last Restocked
+        </th>
+        <th>
+            Type
+        </th>
+        <th>
+            Description
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemName)
+        </td>
+        <td>
+            <span class="alert-danger">@Html.DisplayFor(modelItem => item.ID)</span>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantityLeft)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastShipmentRecieved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GeneralDescription)
+        </td>
+        <td style="text-align:center;">
+            
+            <span style="color: lightgreen">@Html.ActionLink("Register Transaction", "ItemSold", new { ID = item.ID }, new { @class = "btn btn-info" })</span><br />
+            <span style="color: lightgreen"> @Html.ActionLink("Transaction History", "TransactionHistory", new { ID = item.ID }) </span>
+           
+
+
+        </td>
+        <td style="text-align:center;">
+            <span style="color: lightgreen">@Html.ActionLink("Register Shipment", "UpdateShipments", new { ID = item.ID }, new { @class="btn btn-info" })</span><br />
+            <span style="color: lightgreen">@Html.ActionLink("Shipment History", "ShipmentHistory", new { ID = item.ID })</span>
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", "InventoryItems", new { id = item.ID }, new { @class = "text-danger btn btn-warning" }) |
+        </td>
+    </tr>
+}
+
+</table>

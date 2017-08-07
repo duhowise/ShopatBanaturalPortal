@@ -214,6 +214,22 @@
     <Compile Include="Migrations\201708051801037_Initial3.Designer.cs">
       <DependentUpon>201708051801037_Initial3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708062310505_initial4.cs" />
+    <Compile Include="Migrations\201708062310505_initial4.Designer.cs">
+      <DependentUpon>201708062310505_initial4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708070014138_initial5.cs" />
+    <Compile Include="Migrations\201708070014138_initial5.Designer.cs">
+      <DependentUpon>201708070014138_initial5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708070017393_initial6.cs" />
+    <Compile Include="Migrations\201708070017393_initial6.Designer.cs">
+      <DependentUpon>201708070017393_initial6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708070106279_membership.cs" />
+    <Compile Include="Migrations\201708070106279_membership.Designer.cs">
+      <DependentUpon>201708070106279_membership.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -223,8 +239,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\backgroundimage105.jpg" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -234,6 +250,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\TylerLoeper.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -246,7 +263,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -289,6 +308,13 @@
     <Content Include="Views\InventoryItems\ItemSold.cshtml" />
     <Content Include="Views\InventoryItems\ShipmentHistory.cshtml" />
     <Content Include="Views\InventoryItems\TransactionHistory.cshtml" />
+    <Content Include="WebOld.config" />
+    <Content Include="WebOld.Debug.config">
+      <DependentUpon>WebOld.config</DependentUpon>
+    </Content>
+    <Content Include="WebOld.Release.config">
+      <DependentUpon>WebOld.config</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -310,6 +336,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708051801037_Initial3.resx">
       <DependentUpon>201708051801037_Initial3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708062310505_initial4.resx">
+      <DependentUpon>201708062310505_initial4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708070014138_initial5.resx">
+      <DependentUpon>201708070014138_initial5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708070017393_initial6.resx">
+      <DependentUpon>201708070017393_initial6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708070106279_membership.resx">
+      <DependentUpon>201708070106279_membership.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

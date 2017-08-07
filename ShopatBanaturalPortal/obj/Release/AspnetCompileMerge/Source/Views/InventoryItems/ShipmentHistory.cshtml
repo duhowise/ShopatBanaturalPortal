@@ -1,0 +1,32 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "History";
+}
+
+<h2>Shipment History</h2>
+<br />
+Past Updates:
+<br />
+<ol>
+
+    @foreach (string item in Model)
+    {
+        if (!string.IsNullOrEmpty(item))
+        {
+            <li>
+                @item <br />
+            </li>
+        }
+
+    }
+
+</ol>
+<br />
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

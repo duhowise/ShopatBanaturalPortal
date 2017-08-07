@@ -84,3 +84,7 @@ c:\users\tyler loeper\documents\visual studio 2015\Projects\ShopatBanaturalPorta
 c:\users\tyler loeper\documents\visual studio 2015\Projects\ShopatBanaturalPortal\ShopatBanaturalPortal\obj\Debug\ShopatBanaturalPortal.csproj.GenerateResource.Cache
 c:\users\tyler loeper\documents\visual studio 2015\Projects\ShopatBanaturalPortal\ShopatBanaturalPortal\obj\Debug\ShopatBanaturalPortal.Migrations.Initial2.resources
 c:\users\tyler loeper\documents\visual studio 2015\Projects\ShopatBanaturalPortal\ShopatBanaturalPortal\obj\Debug\ShopatBanaturalPortal.Migrations.Initial3.resources
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\ShopatBanaturalPortal\ShopatBanaturalPortal\obj\Debug\ShopatBanaturalPortal.Migrations.initial4.resources
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\ShopatBanaturalPortal\ShopatBanaturalPortal\obj\Debug\ShopatBanaturalPortal.Migrations.initial5.resources
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\ShopatBanaturalPortal\ShopatBanaturalPortal\obj\Debug\ShopatBanaturalPortal.Migrations.initial6.resources
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\ShopatBanaturalPortal\ShopatBanaturalPortal\obj\Debug\ShopatBanaturalPortal.Migrations.membership.resources

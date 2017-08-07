@@ -461,6 +461,13 @@ cite {
   text-align: center;
 }
 
+.col-custom-6 {
+    width: 40%;
+    padding-left: 0px;
+    padding-right: 0px;
+    position: relative;
+}
+
 h1,
 h2,
 h3,

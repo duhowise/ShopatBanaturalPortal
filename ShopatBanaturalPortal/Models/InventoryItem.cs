@@ -25,17 +25,20 @@ namespace ShopatBanaturalPortal.Models
         public string GeneralDescription { get; set; }
         public string TransactionHistory { get; set; }
 
+        //other qualities
+        public float Price { get; set; }
+
 
     }
 
     public class InventoryItemDbContext : System.Data.Entity.DbContext
     {
-        /*
+        
         public InventoryItemDbContext() : base("DefaultConnection")
         {
 
         }
-        */
+        
 
         public DbSet<InventoryItem> InventoryItemDatabase { get; set; }
     }
