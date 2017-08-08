@@ -27,8 +27,17 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inventory", "Index", "InventoryItems")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @Html.Partial("_LoginPartial")
+                }
+             
             </div>
+
+            
+
+
         </div>
     </div>
 

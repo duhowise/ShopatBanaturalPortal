@@ -61,6 +61,12 @@ namespace ShopatBanaturalPortal.Controllers
             return View();
         }
 
+        public ActionResult Error()
+        {
+
+            return View();
+        }
+
         //
         // POST: /Account/Login
         [HttpPost]

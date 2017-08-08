@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\Tyler Loeper\Desktop\Shop.Banatural</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\Tyler Loeper\Desktop\shop0.1</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -19,10 +19,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2017 11:42:04</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>08/06/2017 22:37:37</publishTime>
+      <publishTime>08/07/2017 22:01:07</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>08/06/2017 22:37:37</publishTime>
+      <publishTime>08/07/2017 22:01:07</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2015 09:32:26</publishTime>
@@ -136,7 +136,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/18/2015 21:19:46</publishTime>
     </File>
     <File Include="bin/ShopatBanaturalPortal.dll">
-      <publishTime>08/06/2017 22:37:23</publishTime>
+      <publishTime>08/07/2017 21:28:40</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>01/28/2015 04:04:30</publishTime>
@@ -190,7 +190,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2017 11:42:04</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>08/06/2017 22:37:27</publishTime>
+      <publishTime>08/07/2017 22:01:01</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>08/05/2017 11:41:32</publishTime>
@@ -234,6 +234,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Account/ConfirmEmail.cshtml">
       <publishTime>08/05/2017 11:41:44</publishTime>
     </File>
+    <File Include="Views/Account/Error.cshtml">
+      <publishTime>08/07/2017 21:16:12</publishTime>
+    </File>
     <File Include="Views/Account/ExternalLoginConfirmation.cshtml">
       <publishTime>08/05/2017 11:41:44</publishTime>
     </File>
@@ -274,7 +277,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2017 11:41:24</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>08/05/2017 12:12:30</publishTime>
+      <publishTime>08/07/2017 21:28:12</publishTime>
     </File>
     <File Include="Views/InventoryItems/Create.cshtml">
       <publishTime>08/06/2017 19:17:21</publishTime>
@@ -283,13 +286,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/06/2017 19:30:16</publishTime>
     </File>
     <File Include="Views/InventoryItems/Details.cshtml">
-      <publishTime>08/05/2017 12:08:58</publishTime>
+      <publishTime>08/07/2017 21:11:39</publishTime>
     </File>
     <File Include="Views/InventoryItems/Edit.cshtml">
-      <publishTime>08/05/2017 12:37:44</publishTime>
+      <publishTime>08/07/2017 21:11:20</publishTime>
     </File>
     <File Include="Views/InventoryItems/Index.cshtml">
-      <publishTime>08/05/2017 15:47:06</publishTime>
+      <publishTime>08/07/2017 21:26:02</publishTime>
     </File>
     <File Include="Views/InventoryItems/ItemSold.cshtml">
       <publishTime>08/06/2017 19:32:49</publishTime>
@@ -328,7 +331,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2017 11:41:45</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>08/06/2017 21:22:40</publishTime>
+      <publishTime>08/07/2017 21:57:00</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>08/05/2017 11:41:45</publishTime>
