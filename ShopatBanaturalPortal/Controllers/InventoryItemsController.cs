@@ -15,9 +15,24 @@ namespace ShopatBanaturalPortal.Controllers
         private InventoryItemDbContext db = new InventoryItemDbContext();
 
         // GET: InventoryItems
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.InventoryItemDatabase.ToList());
+
+            var ItemsSelected = from m in db.InventoryItemDatabase
+                                  orderby m.Type, m.QuantityLeft
+                                  select m;
+
+
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                ItemsSelected = from m in db.InventoryItemDatabase
+                                where m.ItemName == searchString || m.Type == searchString || (m.QuantityLeft.ToString()).Contains(searchString)
+                                orderby m.Type, m.QuantityLeft
+                                select m;
+            }
+
+            return View(ItemsSelected);
         }
 
         public ActionResult TransactionHistory(int ID)

@@ -230,6 +230,10 @@
     <Compile Include="Migrations\201708070106279_membership.Designer.cs">
       <DependentUpon>201708070106279_membership.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708121920320_initial7.cs" />
+    <Compile Include="Migrations\201708121920320_initial7.Designer.cs">
+      <DependentUpon>201708121920320_initial7.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -349,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708070106279_membership.resx">
       <DependentUpon>201708070106279_membership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708121920320_initial7.resx">
+      <DependentUpon>201708121920320_initial7.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

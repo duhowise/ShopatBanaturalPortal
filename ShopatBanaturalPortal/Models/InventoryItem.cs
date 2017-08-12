@@ -27,6 +27,7 @@ namespace ShopatBanaturalPortal.Models
 
         //other qualities
         public float Price { get; set; }
+        public string CustomID { get; set; }
 
 
     }

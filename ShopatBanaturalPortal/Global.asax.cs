@@ -28,7 +28,7 @@ namespace ShopatBanaturalPortal
             System.Diagnostics.Debug.WriteLine(exception);
 
             // Redirect somewhere or return an error code in case of web api
-            Response.Redirect("/Account/Forbidden");
+            Response.Redirect("/Account/Error");
         }
     }
 }
