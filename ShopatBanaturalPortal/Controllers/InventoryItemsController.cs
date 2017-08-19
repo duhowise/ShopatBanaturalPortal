@@ -27,7 +27,7 @@ namespace ShopatBanaturalPortal.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 ItemsSelected = from m in db.InventoryItemDatabase
-                                where m.ItemName == searchString || m.Type == searchString || (m.QuantityLeft.ToString()).Contains(searchString)
+                                where m.ItemName == searchString || m.Type == searchString || (m.QuantityLeft.ToString()).Contains(searchString) || m.Brand == searchString || m.CustomID == searchString
                                 orderby m.Type, m.QuantityLeft
                                 select m;
             }
@@ -83,7 +83,7 @@ namespace ShopatBanaturalPortal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(string Type, [Bind(Include = "ID,ItemName,Price,QuantityLeft,Type,GeneralDescription")] InventoryItem inventoryItem)
+        public ActionResult Create(string Type, [Bind(Include = "ID,CustomID,Brand,ItemName,Price,QuantityLeft,Type,GeneralDescription")] InventoryItem inventoryItem)
         {
             if (ModelState.IsValid)
             {
@@ -119,7 +119,7 @@ namespace ShopatBanaturalPortal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,ItemName,ItemNumber,SoldtoDate,SoldthisMonth,SoldthisYear,QuantityLeft,LastShipmentRecieved,Type,TypeDescription,GeneralDescription,MoreDescription")] InventoryItem inventoryItem)
+        public ActionResult Edit([Bind(Include = "ID,CustomID,Brand,ItemName,ItemNumber,SoldtoDate,SoldthisMonth,SoldthisYear,QuantityLeft,LastShipmentRecieved,Type,ShipmentHistory,GeneralDescription,TransactionHistory")] InventoryItem inventoryItem)
         {
             if (ModelState.IsValid)
             {

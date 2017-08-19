@@ -88,3 +88,4 @@ C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\ShopatBanaturalPorta
 C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\ShopatBanaturalPortal\ShopatBanaturalPortal\obj\Release\ShopatBanaturalPortal.csproj.GenerateResource.Cache
 C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\ShopatBanaturalPortal\ShopatBanaturalPortal\obj\Release\ShopatBanaturalPortal.dll
 C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\ShopatBanaturalPortal\ShopatBanaturalPortal\obj\Release\ShopatBanaturalPortal.pdb
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\ShopatBanaturalPortal\ShopatBanaturalPortal\obj\Release\ShopatBanaturalPortal.Migrations.initial7.resources

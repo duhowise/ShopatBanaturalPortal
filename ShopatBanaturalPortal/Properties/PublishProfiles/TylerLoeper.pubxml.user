@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\Tyler Loeper\Desktop\shop0.1</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\Tyler Loeper\Desktop\shop 0.2</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -19,10 +19,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2017 11:42:04</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>08/07/2017 22:01:07</publishTime>
+      <publishTime>08/12/2017 16:11:01</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>08/07/2017 22:01:07</publishTime>
+      <publishTime>08/12/2017 16:11:01</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2015 09:32:26</publishTime>
@@ -136,7 +136,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/18/2015 21:19:46</publishTime>
     </File>
     <File Include="bin/ShopatBanaturalPortal.dll">
-      <publishTime>08/07/2017 21:28:40</publishTime>
+      <publishTime>08/12/2017 16:10:51</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>01/28/2015 04:04:30</publishTime>
@@ -190,7 +190,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2017 11:42:04</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>08/07/2017 22:01:01</publishTime>
+      <publishTime>08/12/2017 16:10:53</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>08/05/2017 11:41:32</publishTime>
@@ -280,7 +280,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2017 21:28:12</publishTime>
     </File>
     <File Include="Views/InventoryItems/Create.cshtml">
-      <publishTime>08/06/2017 19:17:21</publishTime>
+      <publishTime>08/12/2017 15:35:25</publishTime>
     </File>
     <File Include="Views/InventoryItems/Delete.cshtml">
       <publishTime>08/06/2017 19:30:16</publishTime>
@@ -292,7 +292,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2017 21:11:20</publishTime>
     </File>
     <File Include="Views/InventoryItems/Index.cshtml">
-      <publishTime>08/07/2017 21:26:02</publishTime>
+      <publishTime>08/12/2017 15:58:30</publishTime>
     </File>
     <File Include="Views/InventoryItems/ItemSold.cshtml">
       <publishTime>08/06/2017 19:32:49</publishTime>
