@@ -9,6 +9,17 @@
 
 
 <div>
+
+    <div class="form-group col-sm-6 col-md-6 col-lg-6">
+        @using (Html.BeginForm())
+        {
+            <p>
+                Search @Html.TextBox("SearchString", null, new { @class = "form-control" })
+                <input type="submit" value="Search" class="btn btn-primary btn-sm" /> <br /> <br />
+            </p>
+        }
+    </div>
+
     <div class="form-group col-sm-6 col-md-6 col-lg-6">
         <p>
             <br />
@@ -16,15 +27,6 @@
         </p>
     </div>
 
-    <div class="form-group col-sm-6 col-md-6 col-lg-6">
-        @using (Html.BeginForm())
-        {
-
-                <p> Search @Html.TextBox("SearchString", null, new { @class = "form-control" })
-                <input type="submit" value="Search" class="btn btn-primary btn-sm" /> <br /> <br />
-                </p>
-        }
-    </div>
 </div>
 <br />
 
@@ -34,13 +36,16 @@
             Name
         </th>
         <th>
-            #
+            Brand
+        </th>
+        <th>
+            Store ID
         </th>
         <th>
             Quantity Left
         </th>
         <th>
-            Last Restocked
+            Price
         </th>
         <th>
             Type
@@ -57,16 +62,24 @@
             @Html.DisplayFor(modelItem => item.ItemName)
         </td>
         <td>
-            <span class="alert-danger">@Html.DisplayFor(modelItem => item.ID)</span>
+            <em>@Html.DisplayFor(modelItem => item.Brand)</em>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.QuantityLeft)
+            <span class="alert-danger">@Html.DisplayFor(modelItem => item.CustomID)</span>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LastShipmentRecieved)
+            <strong>
+            <em>@Html.DisplayFor(modelItem => item.QuantityLeft)</em>
+            </strong> 
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Type)
+            @{
+                string display = item.Price.ToString("0.00");
+                <span>@display</span>
+            }$
+        </td>
+        <td>
+            <em>@Html.DisplayFor(modelItem => item.Type)</em>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.GeneralDescription)
@@ -86,7 +99,6 @@
 
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
             @Html.ActionLink("Delete", "Delete", "InventoryItems", new { id = item.ID }, new { @class = "text-danger btn btn-warning btn-xs" }) |
         </td>
     </tr>

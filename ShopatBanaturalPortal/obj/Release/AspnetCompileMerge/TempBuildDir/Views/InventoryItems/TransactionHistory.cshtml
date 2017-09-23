@@ -1,4 +1,6 @@
-﻿@model IEnumerable<string>
+﻿@using ShopatBanaturalPortal.Models;
+
+@model IEnumerable<string>
 
 @{
     ViewBag.Title = "History";
@@ -6,7 +8,36 @@
 
 <h2>Transaction History</h2>
 <br />
-Past Updates:
+@{
+    var I_item = (InventoryItem)ViewBag.Model;
+    string TRevenue = (I_item.SoldtoDate * I_item.Price).ToString("0.00");
+    <table class="table">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Total Sold
+            </th>
+            <th>
+                Total Revenue
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => I_item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => I_item.SoldtoDate)
+            </td>
+            <td>
+                @TRevenue $
+            </td>
+        </tr>
+    </table>
+}
+<br />
+<h3>Past Updates:</h3>
 <br />
 <ol>
   

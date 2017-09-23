@@ -1,0 +1,47 @@
+﻿@using ShopatBanaturalPortal.Models;
+@model IList<string>
+
+@{
+    ViewBag.Title = "GenerateChart";
+}
+
+<h2>Generate Chart</h2>
+<br /><br />
+<u>Incomplete. Currently only registers number of transactions. Not number of items sold. Each square is a transaction.</u>
+<br /><br />
+@{
+    var I_item = (InventoryItem)ViewBag.Model;
+    DateTime Start = DateTime.Parse(Model[0]);
+    DateTime End = DateTime.Now;
+    DateTime TraverseDays = Start;
+    int TotalDays = (Start - End).Days + 1;
+
+    if (Model.Any())
+    {
+        for (int i = 0; i < TotalDays; i++)
+        {
+            <div class="col-md-2 col-lg-2">
+                <span>@TraverseDays.ToShortDateString() </span>
+            </div>
+            <div class="col-md-10 col-lg-10">
+                @{
+                    <span><strong>|</strong></span>
+                    while (Model.Any() && Model[0] == TraverseDays.ToShortDateString())
+                    {
+                        Model.Remove(Model[0]);
+                        <span>
+                            <img src="~/Content/PixelSprite.png" />
+                        </span>
+                    }
+                }
+
+            </div>
+
+            TraverseDays.AddDays(1);
+        }
+    }
+
+
+}
+
+<br /><br />

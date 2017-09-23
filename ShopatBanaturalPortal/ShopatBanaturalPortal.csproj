@@ -249,6 +249,7 @@
   <ItemGroup>
     <Content Include="Content\backgroundimage105.jpg" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\PixelSprite.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -324,6 +325,8 @@
       <DependentUpon>WebOld.config</DependentUpon>
     </Content>
     <Content Include="Views\Account\Error.cshtml" />
+    <Content Include="Views\InventoryItems\ChartsIndex.cshtml" />
+    <Content Include="Views\InventoryItems\GenerateChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

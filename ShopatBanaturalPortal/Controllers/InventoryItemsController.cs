@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ShopatBanaturalPortal.Models;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ShopatBanaturalPortal.Controllers
 {
@@ -19,8 +21,27 @@ namespace ShopatBanaturalPortal.Controllers
         {
 
             var ItemsSelected = from m in db.InventoryItemDatabase
-                                  orderby m.Type, m.QuantityLeft
+                                  orderby m.Type, m.CustomID
                                   select m;
+
+
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                ItemsSelected = from m in db.InventoryItemDatabase
+                                where m.ItemName == searchString || m.Type == searchString || (m.QuantityLeft.ToString()).Contains(searchString) || m.Brand == searchString || m.CustomID == searchString
+                                orderby m.Type, m.QuantityLeft
+                                select m;
+            }
+
+            return View(ItemsSelected);
+        }
+        public ActionResult ChartsIndex(string searchString)
+        {
+
+            var ItemsSelected = from m in db.InventoryItemDatabase
+                                orderby m.Type, m.CustomID
+                                select m;
 
 
 
@@ -43,7 +64,7 @@ namespace ShopatBanaturalPortal.Controllers
             InventoryItem ItemModel = (InventoryItem)SelectedItem.First<InventoryItem>();
 
             string[] History = ItemModel.TransactionHistory.Split('*');
-
+            ViewBag.Model = ItemModel;
             return View(History);
         }
         public ActionResult ShipmentHistory(int ID)
@@ -90,6 +111,8 @@ namespace ShopatBanaturalPortal.Controllers
                 inventoryItem.Type = Type;
                 inventoryItem.LastShipmentRecieved = "Not Yet Stocked";
                 inventoryItem.ItemNumber = inventoryItem.ID;
+                inventoryItem.ItemName = inventoryItem.ItemName.ToUpper();
+                inventoryItem.Brand = inventoryItem.Brand.ToUpper();
 
                 db.InventoryItemDatabase.Add(inventoryItem);
                 db.SaveChanges();
@@ -119,7 +142,7 @@ namespace ShopatBanaturalPortal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,CustomID,Brand,ItemName,ItemNumber,SoldtoDate,SoldthisMonth,SoldthisYear,QuantityLeft,LastShipmentRecieved,Type,ShipmentHistory,GeneralDescription,TransactionHistory")] InventoryItem inventoryItem)
+        public ActionResult Edit([Bind(Include = "ID,CustomID,Brand,ItemName,ItemNumber,SoldtoDate,SoldthisMonth,SoldthisYear,QuantityLeft,LastShipmentRecieved,Type,ShipmentHistory,GeneralDescription,TransactionHistory,Price")] InventoryItem inventoryItem)
         {
             if (ModelState.IsValid)
             {
@@ -203,6 +226,7 @@ namespace ShopatBanaturalPortal.Controllers
             if (ModelState.IsValid)
             {
                 ItemModel.QuantityLeft = ItemModel.QuantityLeft - Convert.ToInt32(Sold);
+                ItemModel.SoldtoDate = ItemModel.SoldtoDate + Convert.ToInt32(Sold);
                 //split by **
                 ItemModel.TransactionHistory = ItemModel.TransactionHistory + "[Sold] " + Sold + " " + ItemModel.ItemName + ". [Date] " + DateTime.Now.ToLocalTime() + ". [Revenue] " + (Convert.ToInt32(Sold) * ItemModel.Price) + " $" + "*";
                 db.Entry(ItemModel).State = EntityState.Modified;
@@ -245,6 +269,36 @@ namespace ShopatBanaturalPortal.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult GenerateChart(int ID)
+        {
+            var SelectedItem = from S in db.InventoryItemDatabase
+                               where S.ID == ID
+                               select S;
+            InventoryItem ItemModel = (InventoryItem)SelectedItem.First<InventoryItem>();
+
+            string[] Chart_Intermediate = ItemModel.TransactionHistory.Split(new string[] { "[Date]" }, StringSplitOptions.None);
+            ViewBag.Model = ItemModel;
+            List<string> DateList = new List<string>();
+            List<string> SoldList = new List<string>();
+
+            Regex dateRegex = new Regex(@"\b\d{1,2}\/\d{1,2}\/\d{4}\b");
+            Match match;
+
+            foreach (var item in Chart_Intermediate)
+            {
+               match = null;
+               match = dateRegex.Match(item);
+                var observe = match.ToString();
+
+                if (match != null && match.ToString() != string.Empty)
+                {
+                    DateList.Add(match.ToString());
+                }
+            }
+
+            return View(DateList);
         }
     }
 }

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ShopatBanaturalPortal.Models.InventoryItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Charts</h2>
+<br />
+
+
+<div>
+
+    <div class="form-group col-sm-6 col-md-6 col-lg-6">
+        @using (Html.BeginForm())
+        {
+            <p>
+                Search @Html.TextBox("SearchString", null, new { @class = "form-control" })
+                <input type="submit" value="Search" class="btn btn-primary btn-sm" /> <br /> <br />
+            </p>
+        }
+    </div>
+
+</div>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Store ID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemName)
+        </td>
+        <td>
+            <span class="alert-danger">@Html.DisplayFor(modelItem => item.CustomID)</span>
+        </td>
+        <td>
+            @Html.ActionLink("Generate Chart", "GenerateChart", new { id = item.ID })
+        </td>
+    </tr>
+}
+
+</table>

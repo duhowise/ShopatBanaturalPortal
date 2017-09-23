@@ -26,6 +26,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inventory", "Index", "InventoryItems")</li>
+                    <li>@Html.ActionLink("Charts", "ChartsIndex", "InventoryItems")</li>
                 </ul>
 
                 @if (User.Identity.IsAuthenticated)
@@ -50,7 +51,8 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - BA Natural</p>
+            <p>&copy; @DateTime.Now.Year - BA Natural</p><br />
+            Shop Version 1.00
         </footer>
     </div>
 

@@ -45,7 +45,7 @@
             Quantity Left
         </th>
         <th>
-            Last Restocked
+            Price
         </th>
         <th>
             Type
@@ -73,7 +73,10 @@
             </strong> 
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LastShipmentRecieved)
+            @{
+                string display = item.Price.ToString("0.00");
+                <span>@display</span>
+            }$
         </td>
         <td>
             <em>@Html.DisplayFor(modelItem => item.Type)</em>
