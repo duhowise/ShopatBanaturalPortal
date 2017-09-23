@@ -14,10 +14,8 @@
     DateTime Start = DateTime.Parse(Model[0]);
     DateTime End = DateTime.Now;
     DateTime TraverseDays = Start;
-    int TotalDays = (Start - End).Days + 1;
+    int TotalDays = (End - Start).Days + 1;
 
-    if (Model.Any())
-    {
         for (int i = 0; i < TotalDays; i++)
         {
             <div class="col-md-2 col-lg-2">
@@ -36,10 +34,10 @@
                 }
 
             </div>
-
-            TraverseDays.AddDays(1);
+            <br />
+            TraverseDays = TraverseDays.AddDays(1);
         }
-    }
+
 
 
 }

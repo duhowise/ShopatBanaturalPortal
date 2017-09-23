@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\Tyler Loeper\Desktop\Shop Version 1.0</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\Tyler Loeper\Desktop\Shop Version 1.01</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -19,10 +19,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2017 11:42:04</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>09/23/2017 14:35:28</publishTime>
+      <publishTime>09/23/2017 15:06:32</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>09/23/2017 14:35:28</publishTime>
+      <publishTime>09/23/2017 15:06:32</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2015 09:32:26</publishTime>
@@ -193,7 +193,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2017 11:42:04</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>09/23/2017 14:35:20</publishTime>
+      <publishTime>09/23/2017 15:06:27</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>08/05/2017 11:41:32</publishTime>
@@ -298,7 +298,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/19/2017 16:22:04</publishTime>
     </File>
     <File Include="Views/InventoryItems/GenerateChart.cshtml">
-      <publishTime>09/23/2017 14:32:52</publishTime>
+      <publishTime>09/23/2017 15:04:56</publishTime>
     </File>
     <File Include="Views/InventoryItems/Index.cshtml">
       <publishTime>09/23/2017 11:31:06</publishTime>
