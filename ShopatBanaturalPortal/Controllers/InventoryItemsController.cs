@@ -17,8 +17,13 @@ namespace ShopatBanaturalPortal.Controllers
         private InventoryItemDbContext db = new InventoryItemDbContext();
 
         // GET: InventoryItems
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string searchString = "")
         {
+            if(searchString != null)
+            {
+                ViewBag.SearchString = searchString;
+            }
+            
 
             var ItemsSelected = from m in db.InventoryItemDatabase
                                   orderby m.Type, m.CustomID
@@ -29,12 +34,45 @@ namespace ShopatBanaturalPortal.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 ItemsSelected = from m in db.InventoryItemDatabase
-                                where m.ItemName == searchString || m.Type == searchString || (m.QuantityLeft.ToString()).Contains(searchString) || m.Brand == searchString || m.CustomID == searchString
+                                where m.ItemName.Contains(searchString)  || m.Type.Contains(searchString)  || (m.QuantityLeft.ToString()).Contains(searchString) || m.Brand.Contains(searchString) || m.CustomID.Contains(searchString) || m.GeneralDescription.Contains(searchString)
                                 orderby m.Type, m.QuantityLeft
                                 select m;
             }
 
             return View(ItemsSelected);
+        }
+
+        public ActionResult ExportExcel(string searchString)
+        {
+            searchString = searchString + "";
+
+            var ItemsSelected = (from m in db.InventoryItemDatabase
+                                 orderby m.Type, m.CustomID
+                                 select m).ToList();
+
+
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                ItemsSelected = (from m in db.InventoryItemDatabase
+                                where m.ItemName.Contains(searchString) || m.Type.Contains(searchString) || (m.QuantityLeft.ToString()).Contains(searchString) || m.Brand.Contains(searchString) || m.CustomID.Contains(searchString) || m.GeneralDescription.Contains(searchString)
+                                orderby m.Type, m.QuantityLeft
+                                select m).ToList();
+            }
+
+            List<InventoryItem> ReadyToExport = ItemsSelected;
+            TempData["ReadyToExportSelection"] = ReadyToExport;
+            return RedirectToAction("ExportToExcel");
+        }
+
+        [HttpGet]
+        public FileContentResult ExportToExcel()
+        {
+            List<InventoryItem> ReadyToexport = new List<InventoryItem>();
+            ReadyToexport = (List<InventoryItem>)TempData["ReadyToExportSelection"];
+            string[] columns = { "ItemName", "Brand", "CustomID", "QuantityLeft", "Price", "Type", "GeneralDescription", "SoldtoDate" };
+            byte[] filecontent = ExcelExportHelper.ExportExcel(ReadyToexport, "Inventory", false, columns);
+            return File(filecontent, ExcelExportHelper.ExcelContentType, "Inventory_Report_"+DateTime.Now.DayOfYear + "_"+ DateTime.Now.Year +".xlsx");
         }
         public ActionResult ChartsIndex(string searchString)
         {

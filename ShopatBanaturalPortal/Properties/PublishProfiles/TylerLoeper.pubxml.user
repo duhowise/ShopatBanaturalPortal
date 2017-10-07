@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\Tyler Loeper\Desktop\Shop Version 1.01</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\Tyler Loeper\Desktop\Shop 1.02</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -19,16 +19,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2017 11:42:04</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>09/23/2017 15:06:32</publishTime>
+      <publishTime>10/07/2017 16:04:31</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>09/23/2017 15:06:32</publishTime>
+      <publishTime>10/07/2017 16:04:31</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
       <publishTime>03/02/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/EPPlus.dll">
+      <publishTime>07/14/2016 15:57:38</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>11/30/2016 16:07:42</publishTime>
@@ -136,7 +139,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/18/2015 21:19:46</publishTime>
     </File>
     <File Include="bin/ShopatBanaturalPortal.dll">
-      <publishTime>09/23/2017 14:35:18</publishTime>
+      <publishTime>10/07/2017 16:04:18</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>01/28/2015 04:04:30</publishTime>
@@ -190,10 +193,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2017 11:41:32</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>08/05/2017 11:42:04</publishTime>
+      <publishTime>10/07/2017 12:29:57</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>09/23/2017 15:06:27</publishTime>
+      <publishTime>10/07/2017 16:04:21</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>08/05/2017 11:41:32</publishTime>
@@ -231,8 +234,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/respond.min.js">
       <publishTime>08/05/2017 11:41:40</publishTime>
     </File>
+    <File Include="Scripts/SessionUpdater.js">
+      <publishTime>10/07/2017 12:15:19</publishTime>
+    </File>
     <File Include="Scripts/_references.js">
-      <publishTime>08/05/2017 11:41:40</publishTime>
+      <publishTime>10/07/2017 12:15:19</publishTime>
     </File>
     <File Include="Views/Account/ConfirmEmail.cshtml">
       <publishTime>08/05/2017 11:41:44</publishTime>
@@ -280,7 +286,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2017 11:41:24</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>08/07/2017 21:28:12</publishTime>
+      <publishTime>10/07/2017 15:58:35</publishTime>
     </File>
     <File Include="Views/InventoryItems/ChartsIndex.cshtml">
       <publishTime>09/23/2017 13:42:29</publishTime>
@@ -297,11 +303,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/InventoryItems/Edit.cshtml">
       <publishTime>08/19/2017 16:22:04</publishTime>
     </File>
+    <File Include="Views/InventoryItems/ExportExcel.cshtml">
+      <publishTime>10/07/2017 13:24:22</publishTime>
+    </File>
+    <File Include="Views/InventoryItems/ExportToExcel.cshtml">
+      <publishTime>10/07/2017 13:25:12</publishTime>
+    </File>
     <File Include="Views/InventoryItems/GenerateChart.cshtml">
-      <publishTime>09/23/2017 15:04:56</publishTime>
+      <publishTime>10/07/2017 13:25:24</publishTime>
     </File>
     <File Include="Views/InventoryItems/Index.cshtml">
-      <publishTime>09/23/2017 11:31:06</publishTime>
+      <publishTime>10/07/2017 14:22:45</publishTime>
     </File>
     <File Include="Views/InventoryItems/ItemSold.cshtml">
       <publishTime>09/23/2017 12:38:44</publishTime>
@@ -340,7 +352,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2017 11:41:45</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>09/23/2017 14:34:36</publishTime>
+      <publishTime>10/07/2017 16:03:36</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>08/05/2017 11:41:45</publishTime>
@@ -352,7 +364,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2017 11:41:24</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/06/2017 22:37:24</publishTime>
+      <publishTime>10/07/2017 16:04:19</publishTime>
     </File>
     <File Include="WebOld.config">
       <publishTime>08/06/2017 18:53:13</publishTime>

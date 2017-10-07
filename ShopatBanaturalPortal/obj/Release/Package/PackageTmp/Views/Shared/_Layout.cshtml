@@ -10,9 +10,8 @@
 </head>
 <body>
 
-@if (ViewContext.HttpContext.User.IsInRole("CanManageUsers"))
+@if (Request.IsAuthenticated)
 {
-}
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -33,17 +32,15 @@
                 {
                     @Html.Partial("_LoginPartial")
                 }
-             
+
             </div>
 
-            
+
 
 
         </div>
     </div>
-
-
-
+}
     
 
 
@@ -52,7 +49,7 @@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - BA Natural</p><br />
-            Shop Version 1.00
+            Shop Version 1.02
         </footer>
     </div>
 
@@ -61,3 +58,26 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+<script type="text/javascript" src="/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/SessionUpdater.js"></script>
+
+<!--Unoptimized KeepSessionAlive-->
+<script type="text/javascript">
+    // initialize Session Updater on page
+    SetupSessionUpdater('/Home/KeepSessionAlive');
+    SessionUpdater.Setup('@Url.Action("KeepSessionAlive","Home")');
+</script>
+
+<script type="text/javascript">
+
+    function keepAliveFunc() {
+        setTimeout("keepAlive()", 10000);
+    };
+
+    function keepAlive() {
+        $.post("/Home/KeepAlive", null, function () { keepAliveFunc(); });
+    };
+
+    $(keepAliveFunc());
+</script>
